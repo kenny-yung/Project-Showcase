@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.F": "fortran-modern",
-        "iostream": "cpp",
-        "iomanip": "cpp",
-        "cmath": "cpp"
-    },
-    "git.ignoreLimitWarning": true
-}

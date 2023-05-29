@@ -1,0 +1,60 @@
+---
+name: analytics_complete
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # ===== PROD ====
+  - boto3=1.24  # try to lift this req. now that io 3.0.0 upped pyarrow; also check setup.py
+  - coiled
+  - matplotlib=3
+  - numpy=1.23
+  - openpyxl
+  - pandas=1.5
+  - pip
+  - pydantic=1.9
+  - python=3.10
+  - pyyaml=6.0
+  - scikit-learn=1.0
+  - scipy=1.8
+  - seaborn
+
+  # ===== DEV (essential) ====
+  - black=22.3
+  - flake8=3.9
+  - gitpython
+  - isort=5.12
+  - jupyterlab=3
+  - mypy=0
+  - pre-commit
+  - pylint=2.15
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+
+  # ===== DEV (optional) ====
+  # NOTE: As of conda-lock 1.3.0, selectors do not yet support `or` or `not`, and there is no extra
+  #       selector for non-ARM OSX.
+  - bandit=1.7  # [win]
+  - bandit=1.7  # [linux]
+  - coverage
+  - flake8-bugbear
+  - "libblas=*=*accelerate"  # [arm64]
+  - line_profiler
+  - memory_profiler
+  - nbval
+  - pdbpp
+  - prospector  # [win]
+  - prospector  # [linux]
+  - safety=2.3
+  - tqdm
+  - vulture=2
+
+  # Only add dependencies here if they are definitely not available on conda(-forge).
+  # - pip:
+
+platforms:
+  - linux-64
+  - osx-arm64
+  - osx-64
+  - win-64
